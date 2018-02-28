@@ -37,7 +37,9 @@ namespace Midterm.Managers
         }
         public static void GetAllOrdersFromFile()
         {
+            orderStore = new OrderFileManipulator { Path = ordersPath };
             var ordersCollection = orderStore.GetCollection();
+            systemManager.orderList = new List<Models.Order>();
             foreach(var item in ordersCollection)
             {
                 systemManager.AddOrder(item);

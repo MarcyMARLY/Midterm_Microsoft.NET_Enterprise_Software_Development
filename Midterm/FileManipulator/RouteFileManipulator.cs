@@ -38,7 +38,7 @@ namespace Midterm.FileManipulator
 
         public void WriteToFile(Route t)
         {
-            string RouteString = t.routeName + ";" + t.price + ";" + t.duration + ";";
+            string RouteString = t.routeName + ";" + t.price + ";" + t.duration ;
             using (StreamWriter sw = File.AppendText(Path))
             {
                 sw.WriteLine(RouteString);

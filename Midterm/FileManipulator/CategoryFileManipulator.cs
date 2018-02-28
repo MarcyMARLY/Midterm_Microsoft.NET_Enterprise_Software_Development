@@ -38,7 +38,7 @@ namespace Midterm.FileManipulator
 
         public void WriteToFile(Category t)
         {
-            string CategoryString  = t.id + ";"+ t.productName + ";" + t.pricePerKg + ";" + t.totalAmount + ";";
+            string CategoryString  = t.id + ";"+ t.productName + ";" + t.pricePerKg + ";" + t.totalAmount ;
 
             using (StreamWriter sw = File.AppendText(Path))
             {

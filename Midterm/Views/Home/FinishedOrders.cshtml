@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Midterm.Models.Route>
+@{
+	ViewData["Title"] = "FinishedOrders";
+}
+
+<h2>Choose the route</h2>
+
+<div>
+	<table class="table">
+
+		<tbody>
+			@foreach (var item in Model)
+			{
+
+				<tr>
+					<td>
+						<input type="button" value=@item.routeName onclick="location.href='@Url.Action("ShowReportChoice", "Home",new {routeName = @item.routeName})'" />
+					</td>
+
+				</tr>
+			}
+		</tbody>
+	</table>
+
+</div>

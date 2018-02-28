@@ -88,6 +88,26 @@ namespace Midterm.Controllers
             SystemR.orderManager.ChangeStatus(id, status);
             return RedirectToAction("OrderInProcess", "Home");
         }
+        public IActionResult FinishedOrders()
+        {
+            
+            return View(SystemR.systemManager.GetRoutes());
+        }
+        public IActionResult ShowReportChoice(string routeName)
+        {
+            ViewData["routeName"] = routeName;
+            SystemR.GetAllOrdersFromFile();
+
+            ViewData["totalNumberOFOrders"] = SystemR.systemManager.GetOrdersByRoute(routeName).Count;
+            ViewData["numberOfCanceled"] = SystemR.systemManager.GetOrdersByRoute(routeName).Where(x => x.status == Status.Canceled).ToList().Count;
+            ViewData["numberOfNotOnTime"] = SystemR.systemManager.GetOrdersByRoute(routeName).Where(x => x.status == Status.NotOnTime).ToList().Count;
+            double success = Convert.ToDouble(SystemR.systemManager.GetOrdersByRoute(routeName).Where(x => x.status == Status.Delivered).ToList().Count.ToString());
+            double total = Convert.ToDouble(SystemR.systemManager.GetOrdersByRoute(routeName).ToList().Count.ToString());
+            double percent = success / total * 100;
+            Console.WriteLine(percent);
+            ViewData["percent"] = percent;
+            return View(SystemR.systemManager.GetOrdersByRoute(routeName));
+        }
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

@@ -1,0 +1,63 @@
+﻿
+@{
+	ViewData["Title"] = "ShowReportChoice";
+}
+@model IEnumerable<Midterm.Models.Order>
+<h2>ShowReportChoice</h2>
+<div>
+	<table class="table">
+		<thead>
+			<tr>
+
+				<th scope="row">Route</th>
+				<th scope="row">Category</th>
+				<th scope="row">Amount</th>
+				<th scope="row">Status</th>
+				<th scope="row">Date</th>
+
+
+
+
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+
+				<tr>
+
+					<td>
+						@item.route
+					</td>
+					<td>
+						@item.category
+					</td>
+					<td>
+						@item.amount
+					</td>
+					<td>
+						@item.status
+					</td>
+					<td>
+						@item.date
+					</td>
+
+
+				</tr>
+			}
+		</tbody>
+	</table>
+
+</div>
+
+<label>Total number of orders</label>
+<h3>@ViewData["totalNumberOFOrders"]</h3>
+<label>Number of not on time</label>
+<h3>@ViewData["numberOfNotOnTime"]</h3>
+<label>Number of canceled</label>
+<h3>@ViewData["numberOfCanceled"]</h3>
+
+<label>Percentage of success</label>
+<h3>@ViewData["percent"] %</h3>
+
+

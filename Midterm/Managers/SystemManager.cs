@@ -48,6 +48,10 @@ namespace Midterm.Managers
         {
             return categoryDictionary.Select(x => x.id).ToList();
         }
+        public List<Models.Order> GetOrdersByRoute(string routeName)
+        {
+            return orderList.Where(x => x.route == routeName).ToList();
+        }
         
     }
 }
