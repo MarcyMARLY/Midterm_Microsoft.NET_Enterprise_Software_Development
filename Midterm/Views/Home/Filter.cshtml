@@ -1,0 +1,17 @@
+﻿@model Midterm.Controllers.Border
+
+<h1>Choose the dates</h1>
+
+
+@using (Html.BeginForm("FilterResult", "Home", new { }, FormMethod.Post))
+{
+
+	<br /><label>Date1</label>
+	<br />@Html.EditorFor(m => m.date1)<br />
+	<br />
+	<br /><label>Date2</label>
+	<br />@Html.EditorFor(m => m.date2)<br />
+	<br />
+	<input type="submit" value="Submit" />
+}
+

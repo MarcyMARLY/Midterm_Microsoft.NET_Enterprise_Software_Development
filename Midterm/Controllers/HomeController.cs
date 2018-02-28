@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,6 +11,13 @@ using Midterm.Models;
 
 namespace Midterm.Controllers
 {
+    public class Border
+    {
+        [DataType(DataType.Date)]
+        public DateTime date1 { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime date2 { get; set; }
+    }
     public class HomeController : Controller
     {
         public string error;
@@ -141,6 +149,16 @@ namespace Midterm.Controllers
             }
             
 
+        }
+        public IActionResult Filter()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult FilterResult(Border b)
+        {
+            var orders = SystemR.systemManager.orderList.Where(x => ((x.date > b.date1 && x.date < b.date2)|| (x.date < b.date1 && x.date > b.date2)));
+            return View(orders);
         }
         public IActionResult Error()
         {
