@@ -61,6 +61,11 @@ namespace Midterm.Managers
         }
         public void SaveOrder(int id) {
             SystemR.orderStore.WriteToFile(orderTemporaryCollection.Where(x => x.id == id).First());
+            DeleteOrder(id);
+        }
+        public List<Order> GetNotSavedOrders()
+        {
+            return orderTemporaryCollection;
         }
 
     }

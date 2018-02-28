@@ -41,22 +41,21 @@ namespace Midterm.Controllers
             if (!SystemR.orderManager.IsAmountInStock(amount, category))
             {
                 //Console.WriteLine("Adsdsdsddddddddddddddddddddddddd");
-                error = "Too big amount";
+                error = "Error with amount";
                 TempData["error"] = error;
                 return RedirectToAction("Index", "Home");
             }else if (!SystemR.orderManager.IsDate(date, route))
             {
-                TempData["error"] = "Too big duration";
+                TempData["error"] = "Error with date";
                 return RedirectToAction("Index", "Home");
             }
-            return RedirectToAction("About","Home");
+            SystemR.orderManager.CreateOrder(route, category, amount, date);
+            return RedirectToAction("OrderInProcess","Home");
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+        public IActionResult OrderInProcess()
+        {  
+            return View(SystemR.orderManager.GetNotSavedOrders());
         }
 
         public IActionResult Contact()
