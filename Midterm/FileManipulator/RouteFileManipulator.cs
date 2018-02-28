@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Midterm.FileManipulator
 {
-    interface Interface
+    public class RouteFileManipulator
     {
     }
 }
