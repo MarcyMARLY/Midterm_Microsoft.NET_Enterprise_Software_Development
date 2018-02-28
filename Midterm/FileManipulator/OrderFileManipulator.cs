@@ -14,7 +14,7 @@ namespace Midterm.FileManipulator
 
         public void WriteToFile(Order t)
         {
-            string OrderString = t.route + ";" + t.category + ";" + t.amount + ";" + t.status + ";" + t.date + ";";
+            string OrderString = t.id + ";" + t.route + ";" + t.category + ";" + t.amount + ";" + t.status + ";" + t.date + ";";
             using (StreamWriter sw = File.AppendText(Path))
             {
                 sw.WriteLine(OrderString);
@@ -24,11 +24,12 @@ namespace Midterm.FileManipulator
         public Order ConvertItem(string item)
         {
             var itemList = item.Split(';');
-            var route = itemList[0];
-            var category = itemList[1];
-            var amount = Convert.ToInt32(itemList[2]);
+            var id = Convert.ToInt32(itemList[0]);
+            var route = itemList[1];
+            var category = itemList[2];
+            var amount = Convert.ToInt32(itemList[3]);
             var status = Status.Proceed;
-            switch (itemList[3])
+            switch (itemList[4])
             {
                 case "NotOnTime":
                     status = Status.NotOnTime;
@@ -47,6 +48,7 @@ namespace Midterm.FileManipulator
             var date = Convert.ToDateTime(itemList[4]);
             return new Order
             {
+                id = id,
                 route = route,
                 category = category,
                 amount = amount,
