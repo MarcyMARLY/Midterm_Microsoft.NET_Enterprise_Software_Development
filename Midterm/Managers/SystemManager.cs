@@ -10,9 +10,9 @@ namespace Midterm.Managers
     {
 
 
-        List<Models.Route> routeDictionary = new List<Models.Route>();
-        List<Models.Category> categoryDictionary = new List<Models.Category>();
-        List<Models.Order> orderList = new List<Models.Order>();
+        public List<Models.Route> routeDictionary = new List<Models.Route>();
+        public List<Models.Category> categoryDictionary = new List<Models.Category>();
+        public List<Models.Order> orderList = new List<Models.Order>();
 
         public SystemManager() { }
 

@@ -14,9 +14,9 @@ namespace Midterm
     {
         public static void Main(string[] args)
         {
-            Managers.System.GetAllRoutesFromFile();
-            Managers.System.GetAllCategoriesFromFile();
-            Managers.System.GetAllOrdersFromFile();
+            Managers.SystemR.GetAllRoutesFromFile();
+            Managers.SystemR.GetAllCategoriesFromFile();
+            Managers.SystemR.GetAllOrdersFromFile();
 
             BuildWebHost(args).Run();
         }

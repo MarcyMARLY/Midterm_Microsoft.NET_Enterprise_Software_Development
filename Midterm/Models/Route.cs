@@ -7,5 +7,8 @@ namespace Midterm.Models
 {
     public class Route
     {
+        public string routeName { get; set; }
+        public double price { get; set; }
+        public int duration { get; set; }
     }
 }

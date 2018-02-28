@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Midterm.Managers
 {
-    public class System
+    public class SystemR
     {
         static readonly string categoriesPath = "AppData/categories.csv";
         static readonly string ordersPath = "AppData/orders.csv";
@@ -17,7 +17,7 @@ namespace Midterm.Managers
         public static RouteFileManipulator routeStore = new RouteFileManipulator { Path = routesPath };
 
         public static SystemManager systemManager = new SystemManager();
-
+        public static OrderManager orderManager = new OrderManager();
         public static void GetAllRoutesFromFile()
         {
             var routesCollection = routeStore.GetCollection();

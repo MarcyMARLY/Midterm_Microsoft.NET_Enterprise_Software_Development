@@ -3,5 +3,18 @@
 <h1>Make an order</h1>
 
 <br />
+<label>@ViewData["error"]</label>
+</br>
 
-<br />@Html.DropDownListFor(m => m.route, new SelectList()) <br />
+@using (Html.BeginForm("Index", "Home", new { }, FormMethod.Post))
+{
+	<br /><label>Route</label>
+	<br />@Html.DropDownListFor(m => m.route, ViewData["rnC"] as SelectList) <br />
+	<br /><label>Category</label>
+	<br />@Html.DropDownListFor(m => m.category, ViewData["ciC"] as SelectList) <br />
+	<br /><label>Amount</label><br /> @Html.TextBoxFor(x => x.amount)<br />
+	<br /><label>Date</label>
+	<br />@Html.EditorFor(m => m.date)<br />
+	<br />
+	<input type="submit" value="Submit" />
+}
