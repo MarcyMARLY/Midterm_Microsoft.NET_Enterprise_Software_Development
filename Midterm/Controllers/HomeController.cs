@@ -54,17 +54,40 @@ namespace Midterm.Controllers
         }
 
         public IActionResult OrderInProcess()
-        {  
+        {
+            ViewData["error"] = TempData["error"];
             return View(SystemR.orderManager.GetNotSavedOrders());
         }
 
-        public IActionResult Contact()
+        public IActionResult SaveOrder(int id)
         {
-            ViewData["Message"] = "Your contact page.";
+            if (SystemR.orderManager.orderTemporaryCollection.Where(x => x.id == id).First().status != Status.Proceed)
+            {
+                SystemR.orderManager.SaveOrder(id);
 
+                return RedirectToAction("OrderInProcess", "Home");
+            }
+            else
+            {
+                TempData["error"] = "Cannot save orders with active status";
+                return RedirectToAction("OrderInProcess", "Home");
+            }
+        }
+        public IActionResult DeleteOrder(int id)
+        {
+            SystemR.orderManager.DeleteOrder(id);
+            return RedirectToAction("OrderInProcess", "Home");
+        }
+        public IActionResult ChangeOrder(int id)
+        {
+            ViewData["id"] = id;
             return View();
         }
-
+        public IActionResult ChangeStatus(int id, Status status)
+        {
+            SystemR.orderManager.ChangeStatus(id, status);
+            return RedirectToAction("OrderInProcess", "Home");
+        }
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

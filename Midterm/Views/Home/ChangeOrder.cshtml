@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewData["Title"] = "ChangeOrder";
+}
+
+<h2>ChangeOrder</h2>
+<input type="button" value="NotOnTime" onclick="location.href='@Url.Action("ChangeStatus", "Home",new {id = ViewData["id"], status = Status.NotOnTime})'" />
+<input type="button" value="Delivered" onclick="location.href='@Url.Action("ChangeStatus", "Home",new {id = ViewData["id"], status = Status.Delivered})'" />
+<input type="button" value="Canceled" onclick="location.href='@Url.Action("ChangeStatus", "Home",new {id = ViewData["id"], status = Status.Canceled})'" />
+

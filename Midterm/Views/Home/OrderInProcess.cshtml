@@ -3,6 +3,7 @@
 	ViewData["Title"] = "NOt saved orders";
 }
 @model IEnumerable<Midterm.Models.Order>
+<h1>@ViewData["error"]</h1>
 <div>
 	<table class="table">
 		<thead>
@@ -13,6 +14,9 @@
 				<th scope="row" >Amount</th>
 				<th scope="row" >Status</th>
 				<th scope="row">Date</th>
+				<th scope="row">Save</th>
+				<th scope="row">Delete</th>
+				<th scope="row">ChangeStatus</th>
 				
 
 
@@ -22,26 +26,35 @@
 			@foreach (var item in Model)
 			{
 
-				<tr>
+			<tr>
 
-					<td>
-						@item.route
-					</td>
-					<td>
-						@item.category
-					</td>
-					<td>
-						@item.amount
-					</td>
-					<td>
-						@item.status
-					</td>
-					<td>
-						@item.date
-					</td>
-					
+				<td>
+					@item.route
+				</td>
+				<td>
+					@item.category
+				</td>
+				<td>
+					@item.amount
+				</td>
+				<td>
+					@item.status
+				</td>
+				<td>
+					@item.date
+				</td>
+				<td>
+					<input type="button" value="Save" onclick="location.href='@Url.Action("SaveOrder", "Home",new {Id = @item.id})'" />
+				</td>
+				<td>
+					<input type="button" value="Delete" onclick="location.href='@Url.Action("DeleteOrder", "Home",new {Id = @item.id})'" />
+				</td>
+				<td>
+					<input type="button" value="Delete" onclick="location.href='@Url.Action("ChangeOrder", "Home",new {Id = @item.id})'" />
+				</td>
 
-				</tr>
+
+			</tr>
 			}
 		</tbody>
 	</table>

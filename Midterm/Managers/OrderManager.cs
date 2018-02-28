@@ -53,7 +53,7 @@ namespace Midterm.Managers
         }
         public void ChangeStatus(int id, Status status)
         {
-            SystemR.systemManager.orderList.Where(x => x.id == id).First().status = status;
+            orderTemporaryCollection.Where(x => x.id == id).First().status = status;
         }
         public void DeleteOrder(int id)
         {
