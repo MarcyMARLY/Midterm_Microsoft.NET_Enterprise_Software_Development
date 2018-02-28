@@ -8,9 +8,9 @@ namespace Midterm.Models
     public class Category
     {
         public string id { get; set; }
-        public string ProductName {get;set;}
-        public int PricePerKg { get; set; }
-        public int TotalAmount { get; set; }
+        public string productName {get;set;}
+        public int pricePerKg { get; set; }
+        public int totalAmount { get; set; }
 
     }
 }

@@ -14,9 +14,11 @@ namespace Midterm.Models
     }
     public class Order
     {
-        public Route route { get; set; }
-        public Category category { get; set; }
+        public string route { get; set; }
+        public string category { get; set; }
         public int amount { get; set; }
+        public int status { get; set; }
+        public DateTime date { get; set; }
 
     }
 }

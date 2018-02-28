@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Midterm.FileManipulator
 {
-    interface IFileManipulator
+    interface IFileManipulator <T>
     {
         string Path { get; set; }
         List<T> GetCollection();
