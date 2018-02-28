@@ -9,7 +9,8 @@ namespace Midterm.Models
     {
         NotOnTime,
         Delivered,
-        Canceled
+        Canceled,
+        Proceed
 
     }
     public class Order
@@ -17,7 +18,7 @@ namespace Midterm.Models
         public string route { get; set; }
         public string category { get; set; }
         public int amount { get; set; }
-        public int status { get; set; }
+        public Status status { get; set; }
         public DateTime date { get; set; }
 
     }

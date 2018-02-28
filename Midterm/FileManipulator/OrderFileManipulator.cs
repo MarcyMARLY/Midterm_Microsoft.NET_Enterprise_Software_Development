@@ -24,13 +24,34 @@ namespace Midterm.FileManipulator
         public Order ConvertItem(string item)
         {
             var itemList = item.Split(';');
+            var route = itemList[0];
+            var category = itemList[1];
+            var amount = Convert.ToInt32(itemList[2]);
+            var status = Status.Proceed;
+            switch (itemList[3])
+            {
+                case "NotOnTime":
+                    status = Status.NotOnTime;
+                    break;
+                case "Delivered":
+                    status = Status.Delivered;
+                    break;
+                case "Canceled":
+                    status = Status.Canceled;
+                    break;
+                default:
+                    status = Status.Proceed;
+                    break;
+
+            }
+            var date = Convert.ToDateTime(itemList[4]);
             return new Order
             {
-                route = itemList[0],
-                category = itemList[1],
-                amount = Convert.ToInt32(itemList[2]),
-                status = Convert.ToInt32(itemList[3]),
-                date = Convert.ToDateTime(itemList[4])
+                route = route,
+                category = category,
+                amount = amount,
+                status = status,
+                date = date
             };
         }
 
