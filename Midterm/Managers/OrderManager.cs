@@ -40,6 +40,8 @@ namespace Midterm.Managers
         public void CreateOrder(string route, string category,int amount,DateTime dateTime)
         {
             var status = Status.Proceed;
+            var sum = amount * SystemR.systemManager.categoryDictionary.Where(x => x.id == category).First().pricePerKg +
+    SystemR.systemManager.routeDictionary.Where(x => x.routeName == route).First().price;
             Order o = new Order
             {
                 id = rnd.Next(100, 900),
@@ -47,8 +49,10 @@ namespace Midterm.Managers
                 category = category,
                 amount = amount,
                 status = status,
-                date = dateTime
+                date = dateTime,
+                sum = sum
             };
+
             orderTemporaryCollection.Add(o);
         }
         public void ChangeStatus(int id, Status status)

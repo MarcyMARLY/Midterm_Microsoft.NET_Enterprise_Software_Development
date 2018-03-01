@@ -23,6 +23,7 @@ namespace Midterm.Models
         public Status status { get; set; }
         [DataType(DataType.Date)]
         public DateTime date { get; set; }
+        public double sum { get; set; }
     
 
     }

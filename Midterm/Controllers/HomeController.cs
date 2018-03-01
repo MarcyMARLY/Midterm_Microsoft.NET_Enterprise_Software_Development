@@ -143,6 +143,9 @@ namespace Midterm.Controllers
                 case 4:
                     return View(SystemR.systemManager.GetOrdersByRoute(routeName).OrderBy(x => x.date));
                     break;
+                case 5:
+                    return View(SystemR.systemManager.GetOrdersByRoute(routeName).OrderBy(x => x.sum));
+                    break;
                 default:
                     return View(SystemR.systemManager.GetOrdersByRoute(routeName));
                     break;
@@ -159,6 +162,14 @@ namespace Midterm.Controllers
         {
             var orders = SystemR.systemManager.orderList.Where(x => ((x.date > b.date1 && x.date < b.date2)|| (x.date < b.date1 && x.date > b.date2)));
             return View(orders);
+        }
+        public IActionResult Routes()
+        {
+            return View(SystemR.systemManager.GetRoutes());
+        }
+        public IActionResult Categories()
+        {
+            return View(SystemR.systemManager.GetCategories());
         }
         public IActionResult Error()
         {

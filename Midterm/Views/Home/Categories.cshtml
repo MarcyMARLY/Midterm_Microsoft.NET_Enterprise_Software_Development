@@ -1,0 +1,50 @@
+﻿
+@{
+	ViewData["Title"] = "Categories";
+}
+
+<h2>Categories</h2>
+
+@model IEnumerable<Midterm.Models.Category>
+
+<div>
+	<table class="table">
+		<thead>
+			<tr>
+
+				<th scope="row">Product</th>
+				<th scope="row">Proce per kg</th>
+				<th scope="row">Amount</th>
+				
+				
+
+
+
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+
+				<tr>
+
+					<td>
+						@item.productName
+					</td>
+					<td>
+						@item.pricePerKg
+					</td>
+					<td>
+						@item.totalAmount
+					</td>
+					
+					
+				</tr>
+			}
+		</tbody>
+	</table>
+
+</div>
+
+
+

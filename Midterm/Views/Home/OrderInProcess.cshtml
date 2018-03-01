@@ -9,15 +9,16 @@
 		<thead>
 			<tr>
 
-				<th scope="row" >Route</th>
-				<th scope="row" >Category</th>
-				<th scope="row" >Amount</th>
-				<th scope="row" >Status</th>
+				<th scope="row">Route</th>
+				<th scope="row">Category</th>
+				<th scope="row">Amount</th>
+				<th scope="row">Status</th>
 				<th scope="row">Date</th>
+				<th scope="row">Sum</th>
 				<th scope="row">Save</th>
 				<th scope="row">Delete</th>
 				<th scope="row">ChangeStatus</th>
-				
+
 
 
 			</tr>
@@ -42,6 +43,9 @@
 				</td>
 				<td>
 					@item.date
+				</td>
+				<td>
+					@item.sum
 				</td>
 				<td>
 					<input type="button" value="Save" onclick="location.href='@Url.Action("SaveOrder", "Home",new {Id = @item.id})'" />

@@ -14,7 +14,8 @@
 				<th scope="row">Amount</th>
 				<th scope="row">Status</th>
 				<th scope="row">Date</th>
-\
+				<th scope="row">Sum</th>
+				
 
 
 
@@ -24,25 +25,28 @@
 			@foreach (var item in Model)
 			{
 
-				<tr>
+			<tr>
 
-					<td>
-						@item.route
-					</td>
-					<td>
-						@item.category
-					</td>
-					<td>
-						@item.amount
-					</td>
-					<td>
-						@item.status
-					</td>
-					<td>
-						@item.date
-					</td>
-					
-				</tr>
+				<td>
+					@item.route
+				</td>
+				<td>
+					@item.category
+				</td>
+				<td>
+					@item.amount
+				</td>
+				<td>
+					@item.status
+				</td>
+				<td>
+					@item.date
+				</td>
+				<td>
+					@item.sum
+				</td>
+
+			</tr>
 			}
 		</tbody>
 	</table>

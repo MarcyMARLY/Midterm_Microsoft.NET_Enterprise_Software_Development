@@ -1,0 +1,51 @@
+﻿
+@{
+	ViewData["Title"] = "Routes";
+}
+
+<h2>Routes</h2>
+
+@model IEnumerable<Midterm.Models.Route>
+
+<div>
+	<table class="table">
+		<thead>
+			<tr>
+
+				<th scope="row">Route Name</th>
+				<th scope="row">Price</th>
+				<th scope="row">Duration</th>
+				
+				
+
+
+
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+
+				<tr>
+
+					<td>
+						@item.routeName
+					</td>
+					<td>
+						@item.price
+					</td>
+					<td>
+						@item.duration
+					</td>
+					
+					
+
+				</tr>
+			}
+		</tbody>
+	</table>
+
+</div>
+
+
+

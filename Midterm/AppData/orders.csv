@@ -1,9 +1,5 @@
-﻿546;Astana-Almaty;Category1;0;NotOnTime;01.03.2018 0:00:00
-400;Astana-Almaty;Category1;1;Delivered;01.03.2018 0:00:00
-651;Taraz-Almaty;Category2;1;Delivered;01.03.2018 0:00:00
-285;Taraz-Almaty;Category2;10;Canceled;01.03.2018 0:00:00
-713;Taraz-Almaty;Category1;12;Canceled;02.03.2018 0:00:00
-330;Astana-Almaty;Category1;1;Canceled;01.03.2018 0:00:00
-341;Astana-Almaty;Category2;2;NotOnTime;02.03.2018 0:00:00
-233;Astana-Almaty;Category1;1;Delivered;01.03.2018 0:00:00
-402;Astana-Almaty;Category1;1;Delivered;02.03.2018 0:00:00
+﻿854;Astana-Almaty;Category1;1;Delivered;02.03.2018 0:00:00;134
+517;Astana-Almaty;Category1;3;Canceled;03.03.2018 0:00:00;202
+238;Astana-Almaty;Category1;45;NotOnTime;02.03.2018 0:00:00;1630
+359;Astana-Almaty;Category5;34;Delivered;02.03.2018 0:00:00;1052
+247;Astana-Almaty;Category1;34;NotOnTime;03.03.2018 0:00:00;1256

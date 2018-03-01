@@ -14,7 +14,7 @@ namespace Midterm.FileManipulator
 
         public void WriteToFile(Order t)
         {
-            string OrderString = t.id + ";" + t.route + ";" + t.category + ";" + t.amount + ";" + t.status + ";" + t.date ;
+            string OrderString = t.id + ";" + t.route + ";" + t.category + ";" + t.amount + ";" + t.status + ";" + t.date +";"+ t.sum ;
             using (StreamWriter sw = File.AppendText(Path))
             {
                 sw.WriteLine(OrderString);
@@ -46,6 +46,7 @@ namespace Midterm.FileManipulator
 
             }
             var date = Convert.ToDateTime(itemList[5]);
+            var sum = Convert.ToDouble(itemList[6]);
             return new Order
             {
                 id = id,
@@ -53,7 +54,8 @@ namespace Midterm.FileManipulator
                 category = category,
                 amount = amount,
                 status = status,
-                date = date
+                date = date,
+                sum = sum
             };
         }
 

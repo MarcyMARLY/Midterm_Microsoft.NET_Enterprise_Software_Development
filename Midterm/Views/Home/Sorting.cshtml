@@ -14,6 +14,7 @@
 				<th scope="row" onclick="location.href='@Url.Action("Sorting", "Home",new {parameter = 2,routeName = ViewData["routeName"]})'">Amount</th>
 				<th scope="row" onclick="location.href='@Url.Action("Sorting", "Home",new {parameter = 3,routeName = ViewData["routeName"]})'">Status</th>
 				<th scope="row" onclick="location.href='@Url.Action("Sorting", "Home",new {parameter = 4,routeName = ViewData["routeName"]})'">Date</th>
+				<th scope="row" onclick="location.href='@Url.Action("Sorting", "Home",new {parameter = 5,routeName = ViewData["routeName"]})'">Sum</th>
 
 
 
@@ -24,26 +25,29 @@
 			@foreach (var item in Model)
 			{
 
-				<tr>
+			<tr>
 
-					<td>
-						@item.route
-					</td>
-					<td>
-						@item.category
-					</td>
-					<td>
-						@item.amount
-					</td>
-					<td>
-						@item.status
-					</td>
-					<td>
-						@item.date
-					</td>
+				<td>
+					@item.route
+				</td>
+				<td>
+					@item.category
+				</td>
+				<td>
+					@item.amount
+				</td>
+				<td>
+					@item.status
+				</td>
+				<td>
+					@item.date
+				</td>
+				<td>
+					@item.sum
+				</td>
 
 
-				</tr>
+			</tr>
 			}
 		</tbody>
 	</table>
